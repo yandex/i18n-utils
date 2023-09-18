@@ -1,0 +1,25 @@
+.class {
+    inset-inline-start: 20px;
+    inset-inline-end: 10px;
+}
+
+/*expected*/
+
+@supports (inset-inline-start: 20px) {
+    .class {
+        inset-inline-start: 20px;
+        inset-inline-end: 10px;
+    }
+}
+
+@supports not (inset-inline-start: 20px) {
+    .class {
+        left: 20px;
+        right: 10px;
+    }
+
+    [dir="rtl"] .class {
+        left: 10px;
+        right: 20px;
+    }
+}

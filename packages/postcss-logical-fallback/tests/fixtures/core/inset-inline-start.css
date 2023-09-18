@@ -1,0 +1,22 @@
+.class {
+    inset-inline-start: 12px;
+}
+
+/*expected*/
+
+@supports (inset-inline-start: 12px) {
+    .class {
+        inset-inline-start: 12px;
+    }
+}
+
+@supports not (inset-inline-start: 12px) {
+    .class {
+        left: 12px;
+    }
+
+    [dir="rtl"] .class {
+        left: auto;
+        right: 12px;
+    }
+}

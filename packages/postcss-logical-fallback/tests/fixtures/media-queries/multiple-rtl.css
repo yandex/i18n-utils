@@ -1,0 +1,48 @@
+.class {
+    inset-inline-start: 12px;
+}
+
+@media (max-width: 500px) {
+    .class {
+        inset-inline-start: 24px;
+        inset-inline-end: 36px;
+    }
+}
+
+/*expected*/
+
+@supports (inset-inline-start: 12px) {
+    .class {
+        inset-inline-start: 12px;
+    }
+
+    @media (max-width: 500px) {
+        .class {
+            inset-inline-start: 24px;
+            inset-inline-end: 36px;
+        }
+    }
+}
+
+@supports not (inset-inline-start: 12px) {
+    .class {
+        left: 12px;
+    }
+
+    [dir="rtl"] .class {
+        left: auto;
+        right: 12px;
+    }
+
+    @media (max-width: 500px) {
+        .class {
+            left: 24px;
+            right: 36px;
+        }
+
+        [dir="rtl"] .class {
+            left: 36px;
+            right: 24px;
+        }
+    }
+}

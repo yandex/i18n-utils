@@ -1,0 +1,38 @@
+.class {
+    inset-block-start: 12px;
+}
+
+@media (max-width: 500px) {
+    .class {
+        inset-block-start: 24px;
+        inset-block-end: 36px;
+    }
+}
+
+/*expected*/
+
+@supports (inset-block-start: 12px) {
+    .class {
+        inset-block-start: 12px;
+    }
+
+    @media (max-width: 500px) {
+        .class {
+            inset-block-start: 24px;
+            inset-block-end: 36px;
+        }
+    }
+}
+
+@supports not (inset-block-start: 12px) {
+    .class {
+        top: 12px;
+    }
+
+    @media (max-width: 500px) {
+        .class {
+            top: 24px;
+            bottom: 36px;
+        }
+    }
+}

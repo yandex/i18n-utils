@@ -1,0 +1,34 @@
+body {
+    inset-inline-start: 12px;
+}
+
+.class {
+    inset-block-start: 24px;
+}
+
+/*expected*/
+
+@supports (inset-inline-start: 12px) {
+    body {
+        inset-inline-start: 12px;
+    }
+
+    .class {
+        inset-block-start: 24px;
+    }
+}
+
+@supports not (inset-inline-start: 12px) {
+    body {
+        left: 12px;
+    }
+
+    [dir="rtl"] body {
+        left: auto;
+        right: 12px;
+    }
+
+    .class {
+        top: 24px;
+    }
+}

@@ -62,6 +62,8 @@ jspm_packages/
 # https://github.com/github/gitignore/blob/main/Global/JetBrains.gitignore
 .idea/
 *.iml
+.vscode
+jsconfig.json
 
 # Rush temporary files
 common/deploy/

@@ -1,0 +1,20 @@
+.class {
+    inset-block-start: 12px;
+    inset-block-end: 12px;
+}
+
+/*expected*/
+
+@supports (inset-block-start: 12px) {
+    .class {
+        inset-block-start: 12px;
+        inset-block-end: 12px;
+    }
+}
+
+@supports not (inset-block-start: 12px) {
+    .class {
+        top: 12px;
+        bottom: 12px;
+    }
+}

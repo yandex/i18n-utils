@@ -1,0 +1,36 @@
+.class {
+    inset-inline: 12px;
+}
+
+.multiple-props {
+    inset-inline: 24px 36px;
+}
+
+/*expected*/
+
+@supports (inset-inline: 12px) {
+    .class {
+        inset-inline: 12px;
+    }
+
+    .multiple-props {
+        inset-inline: 24px 36px;
+    }
+}
+
+@supports not (inset-inline: 12px) {
+    .class {
+        left: 12px;
+        right: 12px;
+    }
+
+    .multiple-props {
+        left: 24px;
+        right: 36px;
+    }
+
+    [dir="rtl"] .multiple-props {
+        left: 36px;
+        right: 24px;
+    }
+}

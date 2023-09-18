@@ -1,0 +1,35 @@
+.class {
+    text-align: start;
+    color: black;
+    inset-inline-end: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*expected*/
+
+.class {
+    text-align: start;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@supports (inset-inline-end: 20%) {
+    .class {
+        inset-inline-end: 20%;
+    }
+}
+
+@supports not (inset-inline-end: 20%) {
+    .class {
+        right: 20%;
+    }
+
+    [dir="rtl"] .class {
+        right: auto;
+        left: 20%;
+    }
+}

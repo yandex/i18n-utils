@@ -1,0 +1,19 @@
+.class {
+    padding-block: 12px;
+}
+
+.multiple-props {
+    padding-block: 24px 36px;
+}
+
+/*expected*/
+
+.class {
+    padding-block-start: 12px;
+    padding-block-end: 12px;
+}
+
+.multiple-props {
+    padding-block-start: 24px;
+    padding-block-end: 36px;
+}

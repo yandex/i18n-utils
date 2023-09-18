@@ -1,0 +1,31 @@
+.class {
+    inset-block: 12px;
+}
+
+.multiple-props {
+    inset-block: 24px 36px;
+}
+
+/*expected*/
+
+@supports (inset-block: 12px) {
+    .class {
+        inset-block: 12px;
+    }
+
+    .multiple-props {
+        inset-block: 24px 36px;
+    }
+}
+
+@supports not (inset-block: 12px) {
+    .class {
+        top: 12px;
+        bottom: 12px;
+    }
+
+    .multiple-props {
+        top: 24px;
+        bottom: 36px;
+    }
+}

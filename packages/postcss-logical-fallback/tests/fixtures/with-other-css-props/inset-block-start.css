@@ -1,0 +1,30 @@
+.class {
+    text-align: start;
+    color: black;
+    inset-block-start: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*expected*/
+
+.class {
+    text-align: start;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@supports (inset-block-start: 20%) {
+    .class {
+        inset-block-start: 20%;
+    }
+}
+
+@supports not (inset-block-start: 20%) {
+    .class {
+        top: 20%;
+    }
+}

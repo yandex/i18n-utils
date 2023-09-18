@@ -1,0 +1,31 @@
+.class {
+    inset-block-start: 12px;
+    inset-inline-end: 12px;
+    margin-inline: 50px;
+}
+
+/*expected*/
+
+.class {
+    margin-inline-start: 50px;
+    margin-inline-end: 50px;
+}
+
+@supports (inset-block-start: 12px) {
+    .class {
+        inset-block-start: 12px;
+        inset-inline-end: 12px;
+    }
+}
+
+@supports not (inset-block-start: 12px) {
+    .class {
+        top: 12px;
+        right: 12px;
+    }
+
+    [dir="rtl"] .class {
+        right: auto;
+        left: 12px;
+    }
+}

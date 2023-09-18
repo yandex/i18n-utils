@@ -1,0 +1,22 @@
+.class {
+    border-end-end-radius: 5px;
+}
+
+/*expected*/
+
+@supports (border-end-end-radius: 5px) {
+    .class {
+        border-end-end-radius: 5px;
+    }
+}
+
+@supports not (border-end-end-radius: 5px) {
+    .class {
+        border-bottom-right-radius: 5px;
+    }
+
+    [dir="rtl"] .class {
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 5px;
+    }
+}

@@ -1,0 +1,19 @@
+.class {
+    padding-inline: 12px;
+}
+
+.multiple-props {
+    padding-inline: 24px 36px;
+}
+
+/*expected*/
+
+.class {
+    padding-inline-start: 12px;
+    padding-inline-end: 12px;
+}
+
+.multiple-props {
+    padding-inline-start: 24px;
+    padding-inline-end: 36px;
+}

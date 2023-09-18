@@ -1,0 +1,19 @@
+.class {
+    margin-block: 12px;
+}
+
+.multiple-props {
+    margin-block: 24px 36px;
+}
+
+/*expected*/
+
+.class {
+    margin-block-start: 12px;
+    margin-block-end: 12px;
+}
+
+.multiple-props {
+    margin-block-start: 24px;
+    margin-block-end: 36px;
+}

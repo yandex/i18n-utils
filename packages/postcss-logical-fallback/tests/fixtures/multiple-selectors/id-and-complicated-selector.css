@@ -1,0 +1,46 @@
+#id {
+    inset-inline-start: 12px;
+}
+
+.class > p ~ .test {
+    inset-block-end: 36px;
+}
+
+.other-class:first-child div {
+    inset-block-start: 24px;
+}
+
+/*expected*/
+
+@supports (inset-inline-start: 12px) {
+    #id {
+        inset-inline-start: 12px;
+    }
+
+    .class > p ~ .test {
+        inset-block-end: 36px;
+    }
+
+    .other-class:first-child div {
+        inset-block-start: 24px;
+    }
+}
+
+@supports not (inset-inline-start: 12px) {
+    #id {
+        left: 12px;
+    }
+
+    [dir="rtl"] #id {
+        left: auto;
+        right: 12px;
+    }
+
+    .class > p ~ .test {
+        bottom: 36px;
+    }
+
+    .other-class:first-child div {
+        top: 24px;
+    }
+}
