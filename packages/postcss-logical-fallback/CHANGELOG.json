@@ -1,0 +1,17 @@
+{
+  "name": "postcss-logical-fallback",
+  "entries": [
+    {
+      "version": "1.0.1",
+      "tag": "postcss-logical-fallback_v1.0.1",
+      "date": "Fri, 15 Dec 2023 09:08:20 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Initial release of the postcss-logical-fallback plugin."
+          }
+        ]
+      }
+    }
+  ]
+}
