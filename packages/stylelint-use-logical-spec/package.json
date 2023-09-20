@@ -13,7 +13,7 @@
   "scripts": {
     "build": "rollup -c .rollup.js",
     "test": "stylelint-tape",
-    "lint": "eslint *.ts lib/*.ts --ignore-path .arcignore",
+    "lint": "eslint *.ts lib/*.ts",
     "lint:fix": "eslint *.ts lib/*.ts --ignore-path .arcignore --fix",
     "pretest": "npm run build",
     "prepublishOnly": "npm run build",
