@@ -20,12 +20,7 @@
     "test:watch": "jest --watchAll",
     "pre-commit": "concurrently --names \"Lint,Test\" -c \"bgBlue.bold,bgMagenta.bold\" \"npm run lint\" \"npm run test\"",
     "prepublishOnly": "npm run build",
-    "checkPackageVer": "node --experimental-json-modules scripts/check-package-ver.mjs",
-    "ci:linterFailed": "node scripts/ci/send-linter-failed.mjs",
-    "ci:testsFailed": "node scripts/ci/send-tests-failed.mjs",
-    "ci:published": "node --experimental-json-modules scripts/ci/send-published.mjs",
-    "ci:publishFailed": "node --experimental-json-modules scripts/ci/send-publish-failed.mjs",
-    "ci:checkVersionFailed": "node scripts/ci/send-check-version-failed.mjs"
+    "checkPackageVer": "node --experimental-json-modules scripts/check-package-ver.mjs"
   },
   "author": "Alexey Erhskov <a-ershkov@yandex-team.ru>",
   "license": "MIT",
