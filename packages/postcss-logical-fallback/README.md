@@ -1,32 +1,64 @@
 # postcss-logical-fallback
 
-[PostCSS] плагин для поддержки логических свойств в старых браузерах
+This is [postcss](https://github.com/postcss/postcss) plugin for logical css props support in legacy browsers. Main idea of the plugin is
+an opportunity to write logical styles like in modern browsers in legacy browsers. When all of your
+supported browsers will support all modern logical spec you can just delete this plugin and don't rewrite
+your styles. Second idea of the plugin is to use logical props where they supported and do fallback only in
+non-supported browsers.
 
-[PostCSS]: https://github.com/postcss/postcss
 
-**Рекомендуется использовать вместе
-со [stylelint плагином](https://github.com/yandex/i18n-utils/packages/stylelint-use-logical-properties)**
+**We highly recommend to use it with
+[stylelint plugin](https://github.com/yandex/i18n-utils/packages/stylelint-use-logical-spec)**
 
-Цель данного плагина в том, чтобы создавать фолбеки для плохо поддерживаемых логических
-свойств.
-Мы выделили:
-- Cвойства для абсолютного позиционирования
+Main purpose of this plugin is creating fallbacks for bad supported logical props in legacy browsers.
+We have distinguished:
+- Absolute positioning props like
 `inset-inline-start`, `inset-inline-end`,`inset-block-start`
-и `inset-block-end` из-за плохой поддержки в safari (14.1+ на десктопе, 14.5+ на мобилке),
-chrome (87+) и firefox (66+) и большой распространенности данных свойств
+and `inset-block-end` due to bad support in safari (14.1+ on desktop, 14.5+ on mobile),
+chrome (87+) and firefox (66+) and due to high prevalence of these props.
 
-- Свойства сокращения `inset-inline`, `inset-block`, `margin-inline`, `margin-block`,
-`padding-inline`, `padding-block` из-за той же плохой поддержки в старых браузерах
+- Shorthand props like `inset-inline`, `inset-block`, `margin-inline`, `margin-block`,
+`padding-inline`, `padding-block` due to same bad support in browsers
 
-Подробнее про логические свойства, rtl и зачем нужен этот плагин
-можно почитать на [вики](https://wiki.yandex-team.ru/i18n/guide/rtl/)
+Full logical props support you can see [here](https://caniuse.com/css-logical-props)
 
-Данный плагин стоит использовать с [autoprefixer](https://github.com/postcss/autoprefixer)
-и ставить по порядку до него
+We recommend to use this plugin with [autoprefixer](https://github.com/postcss/autoprefixer)
+and setup our plugin before autoprefixer
 
-## Примеры
-### Фолбек для свойств абсолютного позиционирования
-До
+**WARNING**
+Plugin is based on @supports at rule, so it has to be supported, see on [can i use](https://caniuse.com/css-featurequeries)
+
+## Usage
+
+**Step 1:** install plugin and postcss
+
+```sh
+npm install --save-dev postcss postcss-logical-fallback
+```
+
+**Step 2:** Find config at the root of your project: `postcss.config.js`,
+`"postcss"` section in `package.json`
+or `postcss` section in your build config.
+
+If you haven't already use postcss you should setup it according to
+[official documentation](https://github.com/postcss/postcss#usage) and add postcss-logical-fallback
+after it.
+
+**Step 3:** Add plugin to the plugin list
+
+```diff
+module.exports = {
+  plugins: [
++   require('postcss-logical-fallback'),
+    require('autoprefixer')
+  ]
+}
+```
+
+## Examples
+### Fallback for absolute positioning props
+
+Before
 
 ```css
 .class {
@@ -35,7 +67,7 @@ chrome (87+) и firefox (66+) и большой распространеннос
 }
 ```
 
-После
+After
 
 ```css
 @supports (inset-block-start: 12px) {
@@ -58,8 +90,9 @@ chrome (87+) и firefox (66+) и большой распространеннос
 }
 ```
 
-### Фолбек для сокращений
-До
+### Fallback for shorthands
+
+Before
 
 ```css
 .class {
@@ -68,7 +101,7 @@ chrome (87+) и firefox (66+) и большой распространеннос
 }
 ```
 
-После
+After
 
 ```css
 .class {
@@ -80,9 +113,9 @@ chrome (87+) и firefox (66+) и большой распространеннос
 }
 ```
 
-### Фолбек для сокращений inset
+### Fallback for inset shorthands
 
-До
+Before
 
 ```css
 .class {
@@ -94,7 +127,7 @@ chrome (87+) и firefox (66+) и большой распространеннос
 }
 ```
 
-После
+After
 
 ```css
 @supports (inset-inline: 12px) {
@@ -126,32 +159,3 @@ chrome (87+) и firefox (66+) и большой распространеннос
 
 ```
 
-Больше примеров можно найти [здесь](https://wiki.yandex-team.ru/i18n/guide/rtl/#primerytransformacijjplagina)
-
-## Использование
-
-**Шаг1:** Установите плагин:
-
-```sh
-npm install --save-dev postcss postcss-logical-fallback
-```
-
-**Шаг 2:** Найдите конфиг postcss в корне проекта: `postcss.config.js`,
-`"postcss"` секцию в `package.json`
-иди `postcss` в конфиге вашего сборщика.
-
-Если вы еще не используете postcss, то установите его в соответствии с
-[официальной документацией] и добавьте данный плагин после установки
-
-**Шаг 3:** Добавьте плагин в список плагинов
-
-```diff
-module.exports = {
-  plugins: [
-+   require('postcss-logical-fallback'),
-    require('autoprefixer')
-  ]
-}
-```
-
-[официальной документацией]: https://github.com/postcss/postcss#usage
