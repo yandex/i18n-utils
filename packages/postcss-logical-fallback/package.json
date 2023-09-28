@@ -14,7 +14,8 @@
   ],
   "scripts": {
     "build": "rollup -c --bundleConfigAsCjs",
-    "lint": "eslint .",
+    "lint": "npm run lint:ts && npm run stylelint",
+    "lint:ts": "eslint .",
     "stylelint": "stylelint **/*.css --fix",
     "test": "jest",
     "test:watch": "jest --watchAll",
