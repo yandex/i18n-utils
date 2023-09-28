@@ -1,6 +1,6 @@
 # Property Use Logical [stylelint]
 
-### This is fork from https://github.com/dr-itz/stylelint-use-logical-spec/tree/feat/value-split
+### This is fork from https://github.com/dr-itz/stylelint-use-logical-properties/tree/feat/value-split
 
 [Property Use Logical] is a [stylelint] rule to enforce the usage of
 [Logical Properties and Values] in CSS.
@@ -98,7 +98,7 @@ blockquote {
 Add [stylelint] and [Property Use Logical] to your project.
 
 ```bash
-npm install stylelint stylelint-use-logical-spec --save-dev
+npm install stylelint stylelint-use-logical-properties --save-dev
 ```
 
 Add [Property Use Logical] to your [stylelint configuration].
@@ -106,10 +106,10 @@ Add [Property Use Logical] to your [stylelint configuration].
 ```js
 {
   "plugins": [
-    "stylelint-use-logical-spec"
+    "stylelint-use-logical-properties"
   ],
   "rules": {
-    "stylelint-use-logical-spec": ("always" || true) || "allow-shorthands" || ("ignore" || false || null)
+    "stylelint-use-logical-properties": ("always" || true) || "allow-shorthands" || ("ignore" || false || null)
   }
 }
 ```
@@ -338,4 +338,4 @@ Codebase off https://github.com/csstools/stylelint-use-logical
 [Logical Properties and Values]: https://www.w3.org/TR/css-logical-1/
 [stylelint]: https://github.com/stylelint/stylelint
 [stylelint configuration]: https://github.com/stylelint/stylelint/blob/master/docs/user-guide/configuration.md#readme
-[Property Use Logical]: https://github.com/Jordan-Hall/stylelint-use-logical-spec
+[Property Use Logical]: https://github.com/Jordan-Hall/stylelint-use-logical-properties

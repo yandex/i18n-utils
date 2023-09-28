@@ -5,7 +5,7 @@
 [PostCSS]: https://github.com/postcss/postcss
 
 **Рекомендуется использовать вместе
-со [stylelint плагином](https://github.com/yandex/i18n-utils/packages/stylelint-use-logical-spec)**
+со [stylelint плагином](https://github.com/yandex/i18n-utils/packages/stylelint-use-logical-properties)**
 
 Цель данного плагина в том, чтобы создавать фолбеки для плохо поддерживаемых логических
 свойств.

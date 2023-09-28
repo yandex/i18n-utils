@@ -50,7 +50,7 @@ importers:
       ts-jest: 29.0.5_dpeskwxphnya5upqdfnwr7zyoa
       typescript: 4.9.5
 
-  ../../packages/stylelint-use-logical-spec:
+  ../../packages/stylelint-use-logical-properties:
     specifiers:
       '@babel/core': ^7.20.7
       '@babel/preset-env': 7.20.2

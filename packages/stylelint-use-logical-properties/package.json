@@ -1,5 +1,5 @@
 {
-  "name": "stylelint-use-logical-spec",
+  "name": "stylelint-use-logical-properties",
   "version": "6.2.2",
   "description": "Enforce usage of logical properties and values in CSS",
   "main": "index.cjs.js",

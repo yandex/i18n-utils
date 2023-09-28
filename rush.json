@@ -333,8 +333,8 @@
    */
   "projects": [
     {
-      "packageName": "stylelint-use-logical-spec",
-      "projectFolder": "packages/stylelint-use-logical-spec"
+      "packageName": "stylelint-use-logical-properties",
+      "projectFolder": "packages/stylelint-use-logical-properties"
     },
     {
       "packageName": "postcss-logical-fallback",
