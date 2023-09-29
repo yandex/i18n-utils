@@ -334,11 +334,13 @@
   "projects": [
     {
       "packageName": "stylelint-use-logical-properties",
-      "projectFolder": "packages/stylelint-use-logical-properties"
+      "projectFolder": "packages/stylelint-use-logical-properties",
+      "shouldPublish": true
     },
     {
       "packageName": "postcss-logical-fallback",
-      "projectFolder": "packages/postcss-logical-fallback"
+      "projectFolder": "packages/postcss-logical-fallback",
+      "shouldPublish": true
     }
     // {
     //   /**

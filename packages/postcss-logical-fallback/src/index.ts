@@ -5,19 +5,15 @@ import { createInsetFallback } from './create-inset-fallback';
 import { PLUGIN_NAME, FALLBACK_CONFIG } from './constants';
 import { createShorthandsFallback } from './create-shorthands-fallback';
 
-type Options = Record<string, string>;
-
 const selectors: Selectors = new Map();
 let supportsSelectors = {};
 
-module.exports = (_: Options = {}): Plugin | Processor => {
-    // Work with options here
-
+module.exports = (): Plugin | Processor => {
     return {
         postcssPlugin: PLUGIN_NAME,
 
         Once: () => {
-            selectors.clear();
+            selectors.clear()
             supportsSelectors = {};
         },
 
