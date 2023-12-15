@@ -1,0 +1,10 @@
+{
+  "changes": [
+    {
+      "packageName": "postcss-logical-fallback",
+      "comment": "Update devDependencies",
+      "type": "none"
+    }
+  ],
+  "packageName": "postcss-logical-fallback"
+}
