@@ -20,7 +20,7 @@
     "test": "uvu -r tsm ./tests"
   },
   "license": "Apache-2.0",
-  "repository": "https://github.com/yandex/i18n-utils/packages/postcss-logical-fallback",
+  "repository": "https://github.com/yandex/i18n-utils",
   "engines": {
     "node": ">=14.0.0"
   },
