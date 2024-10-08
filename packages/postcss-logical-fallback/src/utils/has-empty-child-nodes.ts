@@ -1,3 +1,6 @@
-import {Container} from "postcss";
+import { Container } from 'postcss';
 
-export const hasEmptyChildNodes = ({nodes}: Container) => !nodes || nodes.length === 0
+export const hasEmptyChildNodes = ({ nodes }: Container) => {
+    const significantNodes = nodes.filter((node) => node.type !== 'comment');
+    return !significantNodes || significantNodes.length === 0;
+};
