@@ -1,0 +1,10 @@
+{
+  "changes": [
+    {
+      "packageName": "postcss-logical-fallback",
+      "comment": "Fix repository link in package.json",
+      "type": "patch"
+    }
+  ],
+  "packageName": "postcss-logical-fallback"
+}
