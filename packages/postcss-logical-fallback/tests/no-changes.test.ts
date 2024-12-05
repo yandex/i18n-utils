@@ -35,4 +35,45 @@ test('should not copy comments', async () => {
     );
 });
 
+test('should not fallback statements with variables', async () => {
+    await run(
+        `
+      .class {
+        padding-inline: var(--some-variable);
+      }
+      `,
+        `
+      .class {
+        padding-inline: var(--some-variable);
+      }
+      `,
+    );
+
+    await run(
+        `
+      .class {
+        margin-block: var(--some-variable);
+      }
+      `,
+        `
+      .class {
+        margin-block: var(--some-variable);
+      }
+      `,
+    );
+
+    await run(
+        `
+      .class {
+        inset-inline: var(--some-variable);
+      }
+      `,
+        `
+      .class {
+        inset-inline: var(--some-variable);
+      }
+      `,
+    );
+});
+
 test.run();

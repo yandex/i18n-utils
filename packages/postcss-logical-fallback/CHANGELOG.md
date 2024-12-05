@@ -1,5 +1,8 @@
 # Change Log - postcss-logical-fallback
 
+## 1.1.0
+Remove CSS variables support
+
 ## 1.0.3
 Fix can't read filter of undefined
 
