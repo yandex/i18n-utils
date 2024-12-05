@@ -30,6 +30,10 @@ Please note that the utility and functionality of this plugin may be limited whe
 **WARNING**
 Plugin is based on @supports at rule, so it has to be supported, see on [can i use](https://caniuse.com/css-featurequeries)
 
+**WARNING**
+Plugin doesn't migrates css properties with css variables due to impossibility of resolving how many values in css
+variable and how to split them.
+
 ## Usage
 
 **Step 1:** install plugin and postcss

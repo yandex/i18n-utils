@@ -1,6 +1,6 @@
 {
   "name": "postcss-logical-fallback",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "PostCSS plugin for logical fallback props",
   "main": "index.js",
   "files": [
